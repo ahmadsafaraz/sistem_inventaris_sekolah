@@ -1,0 +1,44 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="ERD Inventaris Sekolah">
+    <mxGraphModel dx="1000" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- PETUGAS -->
+        <mxCell id="petugas" value="PETUGAS&#xa;----------------&#xa;id_petugas (PK)&#xa;nama_petugas&#xa;no_telp" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="1">
+          <mxGeometry x="50" y="100" width="200" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- TRANSAKSI -->
+        <mxCell id="transaksi" value="TRANSAKSI&#xa;----------------&#xa;id_transaksi (PK)&#xa;id_petugas (FK)&#xa;tgl_transaksi&#xa;keterangan" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="300" y="100" width="220" height="140" as="geometry"/>
+        </mxCell>
+
+        <!-- DETAIL TRANSAKSI -->
+        <mxCell id="detail" value="DETAIL_TRANSAKSI&#xa;----------------&#xa;id_transaksi (PK, FK)&#xa;id_barang (PK, FK)&#xa;jumlah&#xa;harga_satuan&#xa;subtotal" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;" vertex="1" parent="1">
+          <mxGeometry x="300" y="300" width="240" height="160" as="geometry"/>
+        </mxCell>
+
+        <!-- BARANG -->
+        <mxCell id="barang" value="BARANG&#xa;----------------&#xa;id_barang (PK)&#xa;nama_barang&#xa;kategori&#xa;satuan&#xa;stok_tersedia&#xa;lokasi" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="600" y="250" width="240" height="180" as="geometry"/>
+        </mxCell>
+
+        <!-- RELATIONSHIP -->
+        <mxCell id="r1" style="endArrow=none;" edge="1" parent="1" source="petugas" target="transaksi">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="r2" style="endArrow=none;" edge="1" parent="1" source="transaksi" target="detail">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="r3" style="endArrow=none;" edge="1" parent="1" source="barang" target="detail">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
